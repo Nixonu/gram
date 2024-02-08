@@ -24,5 +24,5 @@ gpu_stats=$(< $GPU_STATS_JSON)
 #	gpu_count=${#busids[@]}
 	gpu_count=`nvtool --gpucount | grep "GPU count:" | awk '{gsub(/[^0-9]/,""); print}'`
 screen -dmS meridian bash -c "while true; do /usr/bin/node ~/JettonGramGpuMiner/send_multigpu_meridian.js --api tonapi --givers 1000 --bin ~/JettonGramGpuMiner/pow-miner-cuda --gpu-count $gpu_count; sleep 1; done"
-	done
+	
  screen -ls
