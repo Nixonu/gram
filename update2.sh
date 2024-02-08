@@ -8,7 +8,7 @@ gpu_stats=$(< $GPU_STATS_JSON)
 	gpu_count=`nvtool --gpucount | grep "GPU count:" | awk '{gsub(/[^0-9]/,""); print}'`
 	for(( i=0; i < gpu_count; i++ )); do
 		echo Mining on GPU $i has been stopped
-		screen -XS gram_$i quit
+		screen -XS meridian_$i quit
 	done
  screen -ls
  
